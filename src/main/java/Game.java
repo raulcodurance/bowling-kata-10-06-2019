@@ -8,17 +8,17 @@ public class Game {
     }
 
     public int score() {
-        int i = 0;
+        int roll = 0;
         int score =0;
         for (int frame = 0; frame < 10; frame++) {
-            if (rolls[i] + rolls[i + 1] == 10) {
+            if (rolls[roll] + rolls[roll + 1] == 10) {
 
-                score += 10 + rolls[i + 2];
+                score += 10 + rolls[roll + 2];
             }else {
 
-                score += rolls[i] + rolls[i + 1];
+                score += rolls[roll] + rolls[roll + 1];
             }
-            i += 2;
+            roll += 2;
         }
         return score;
     }

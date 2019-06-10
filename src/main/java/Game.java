@@ -8,17 +8,23 @@ public class Game {
     }
 
     public int score() {
-        int roll = 0;
-        int score =0;
+        int firstInFrame = 0;
+        int score = 0;
         for (int frame = 0; frame < 10; frame++) {
-            if (rolls[roll] + rolls[roll + 1] == 10) {
+            if (rolls[firstInFrame] == 10) {
 
-                score += 10 + rolls[roll + 2];
-            }else {
+                score += 10 + rolls[firstInFrame + 1] + rolls[firstInFrame + 2];
 
-                score += rolls[roll] + rolls[roll + 1];
+                firstInFrame ++;
+            } else if (rolls[firstInFrame] + rolls[firstInFrame + 1] == 10) {
+
+                score += 10 + rolls[firstInFrame + 2];
+                firstInFrame += 2;
+            } else {
+
+                score += rolls[firstInFrame] + rolls[firstInFrame + 1];
+                firstInFrame += 2;
             }
-            roll += 2;
         }
         return score;
     }

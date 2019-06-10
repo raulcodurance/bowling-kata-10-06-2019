@@ -44,6 +44,17 @@ public class BowlingGameShould {
         assertEquals(16, game.score());
     }
 
+    @Test
+    public void return_score_24_for_a_strike() {
+
+        game.roll(10); // strike
+        game.roll(3);
+        game.roll(4);
+
+        rollMany(16, 0);
+        assertEquals(24, game.score());
+    }
+
     private void rollMany(int rolls, int pins) {
         for (int i = 0; i < rolls; i++) {
             game.roll(pins);

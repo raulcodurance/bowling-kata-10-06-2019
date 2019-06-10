@@ -1,5 +1,4 @@
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -35,7 +34,6 @@ public class BowlingGameShould {
         assertEquals(20, game.score());
     }
 
-    @Ignore
     @Test
     public void return_score_16_for_a_spare() {
         game.roll(5);
